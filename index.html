@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maaf Baby ❤️</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#ff758c,#ff7eb3);
+      overflow:hidden;
+      padding:20px;
+    }
+
+    .card{
+      width:100%;
+      max-width:420px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:25px;
+      padding:35px 25px;
+      text-align:center;
+      color:white;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+      animation:fadeIn 1s ease;
+    }
+
+    .heart{
+      font-size:70px;
+      animation:beat 1s infinite;
+      margin-bottom:10px;
+    }
+
+    h1{
+      font-size:2rem;
+      margin-bottom:15px;
+    }
+
+    p{
+      font-size:1rem;
+      line-height:1.9;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      background:white;
+      color:#ff4f81;
+      border:none;
+      padding:14px 28px;
+      border-radius:50px;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:#ffe5ee;
+    }
+
+    .message{
+      margin-top:20px;
+      font-size:1rem;
+      opacity:0;
+      transform:translateY(10px);
+      transition:0.5s ease;
+    }
+
+    .show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @keyframes beat{
+      0%{transform:scale(1);}
+      50%{transform:scale(1.15);}
+      100%{transform:scale(1);}
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* Mobile Friendly */
+    @media(max-width:480px){
+      h1{
+        font-size:1.6rem;
+      }
+
+      p{
+        font-size:0.95rem;
+      }
+
+      .heart{
+        font-size:60px;
+      }
+
+      .card{
+        padding:28px 20px;
+      }
+
+      .btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="heart">❤️</div>
+
+    <h1>Untuk Baby Safeeyah 🥺</h1>
+
+    <p>
+      saya mintak maaf baby safeeyah 💖<br><br>
+
+      saya sayang baby dan saya memang nk mintak maaf dgn baby.<br>
+      saya harap kita boleh jadi macam dulu balikk :)<br><br>
+
+      ikhlas dari saya &lt;3
+    </p>
+
+    <button class="btn" onclick="showLove()">
+      Tekan Kalau Baby Maafkan Saya 🥺
+    </button>
+
+    <div class="message" id="message">
+      Thank you baby ❤️<br>
+      saya sayang baby sangat 💖
+    </div>
+  </div>
+
+  <script>
+    function showLove(){
+
+      // Show hidden message
+      document.getElementById("message")
+        .classList.add("show");
+
+      // Confetti burst
+      confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+
+      // Extra confetti
+      setTimeout(() => {
+        confetti({
+          particleCount: 100,
+          angle: 60,
+          spread: 70,
+          origin: { x: 0 }
+        });
+
+        confetti({
+          particleCount: 100,
+          angle: 120,
+          spread: 70,
+          origin: { x: 1 }
+        });
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
